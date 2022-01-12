@@ -2,6 +2,6 @@
 
 class_FrIf FrIf;
 
-void class_FrIf::InitFunction(void){
+FUNC(void, FRIF_CODE) class_FrIf::InitFunction(void){
 }
 

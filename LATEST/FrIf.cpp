@@ -110,7 +110,7 @@ FUNC(void, FRIF_CODE) class_FrIf::DisableAbsoluteTimerIRQ(void){
 FUNC(void, FRIF_CODE) class_FrIf::DisableRelativeTimerIRQ(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf::GetNmVectorclass_FrIf(void){
+FUNC(void, FRIF_CODE) class_FrIf::GetNmVector(void){
 }
 
 FUNC(void, FRIF_CODE) class_FrIf::GetClockCorrection(void){

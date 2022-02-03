@@ -26,7 +26,6 @@ class class_FrIf{
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, FRIF_CODE) InitFunction              (void);
       FUNC(void, FRIF_CODE) GetVersionInfo            (void);
       FUNC(void, FRIF_CODE) ControllerInit            (void);
       FUNC(void, FRIF_CODE) StartCommunication        (void);

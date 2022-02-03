@@ -8,6 +8,8 @@
 /*****************************************************/
 #include "FrIf.h"
 
+#include "FrIf_EcuM.h"
+
 /*****************************************************/
 /* #DEFINES                                          */
 /*****************************************************/
@@ -32,11 +34,13 @@
 /* OBJECTS                                           */
 /*****************************************************/
 class_FrIf FrIf;
+class_FrIf_EcuM FrIf_EcuM;
+class_EcuM_Client *EcuM_Client_ptr_FrIf = &FrIf_EcuM;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-FUNC(void, FRIF_CODE) class_FrIf::InitFunction(void){
+FUNC(void, FRIF_CODE) class_FrIf_EcuM::InitFunction(void){
 }
 
 FUNC(void, FRIF_CODE) class_FrIf::GetVersionInfo(void){

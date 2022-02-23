@@ -1,6 +1,6 @@
 #pragma once
 /*****************************************************/
-/* File   : FrIf.h                                   */
+/* File   : FrIf_Unused.h                            */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
@@ -21,7 +21,7 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class class_FrIf{
+class class_FrIf_Unused{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
@@ -68,7 +68,6 @@ class class_FrIf{
       FUNC(void, FRIF_CODE) GetWakeupRxStatus         (void);
       FUNC(void, FRIF_CODE) JobListExec               (void);
       FUNC(void, FRIF_CODE) CbWakeupByTransceiver     (void);
-      FUNC(void, FRIF_CODE) MainFunction              (void);
 };
 
 /*****************************************************/
@@ -82,11 +81,9 @@ class class_FrIf{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern class_FrIf FrIf;
+//extern class_FrIf FrIf;
 
 /*****************************************************/
 /* EOF                                               */
 /*****************************************************/
-
-
 

@@ -1,6 +1,6 @@
 #pragma once
 /*****************************************************/
-/* File   : FrIf_EcuM.h                              */
+/* File   : FrIf_SchM.h                              */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
@@ -9,7 +9,7 @@
 /*****************************************************/
 #include "Compiler_Cfg_FrIf.h"
 
-#include "EcuM_Client.h"
+#include "SchM_Client.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -22,13 +22,12 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class interface_FrIf_EcuM : public interface_EcuM_Client{
+class interface_FrIf_SchM : public interface_SchM_Client{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, FRIF_CODE) InitFunction   (void);
-      FUNC(void, FRIF_CODE) DeInitFunction (void);
+      FUNC(void, FRIF_CODE) MainFunction(void);
 };
 
 /*****************************************************/
@@ -42,7 +41,7 @@ class interface_FrIf_EcuM : public interface_EcuM_Client{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern interface_FrIf_EcuM *EcuM_Client_ptr_FrIf;
+extern interface_FrIf_SchM *SchM_Client_ptr_FrIf;
 
 /*****************************************************/
 /* EOF                                               */

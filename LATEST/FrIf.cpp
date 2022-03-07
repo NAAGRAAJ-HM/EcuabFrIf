@@ -24,8 +24,6 @@
 /*****************************************************/
 class module_FrIf:
       public abstract_module
-   ,  public interface_FrIf_EcuM
-   ,  public interface_FrIf_SchM
 {
    public:
       FUNC(void, FRIF_CODE) InitFunction   (void);
@@ -44,10 +42,9 @@ class module_FrIf:
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-module_FrIf FrIf;
-
-interface_FrIf_EcuM *EcuM_Client_ptr_FrIf = &FrIf;
-interface_FrIf_SchM *SchM_Client_ptr_FrIf = &FrIf;
+module_FrIf    FrIf;
+infEcuMClient* gptrinfEcuMClient_FrIf = &FrIf;
+infSchMClient* gptrinfSchMClient_FrIf = &FrIf;
 
 /*****************************************************/
 /* FUNCTIONS                                         */

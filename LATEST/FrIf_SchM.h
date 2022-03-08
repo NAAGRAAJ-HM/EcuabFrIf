@@ -32,7 +32,7 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern interface_FrIf_SchM *SchM_Client_ptr_FrIf;
+extern infSchMClient *gptrinfSchMClient_FrIf;
 
 /*****************************************************/
 /* FUNCTIONS                                         */

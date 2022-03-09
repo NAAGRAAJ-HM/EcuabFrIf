@@ -32,7 +32,7 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern infEcuMClient *gptrinfEcuMClient_FrIf;
+extern infEcuMClient* gptrinfEcuMClient_FrIf;
 
 /*****************************************************/
 /* FUNCTIONS                                         */

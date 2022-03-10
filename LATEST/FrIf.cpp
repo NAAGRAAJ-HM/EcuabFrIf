@@ -7,8 +7,8 @@
 /* #INCLUDES                                         */
 /*****************************************************/
 #include "module.h"
-#include "FrIf_EcuM.h"
-#include "FrIf_SchM.h"
+#include "infFrIf_EcuM.h"
+#include "infFrIf_SchM.h"
 #include "FrIf_Unused.h"
 
 /*****************************************************/
@@ -28,6 +28,7 @@ class module_FrIf:
    public:
       FUNC(void, FRIF_CODE) InitFunction   (void);
       FUNC(void, FRIF_CODE) DeInitFunction (void);
+      FUNC(void, FRIF_CODE) GetVersionInfo (void);
       FUNC(void, FRIF_CODE) MainFunction   (void);
 };
 
@@ -44,6 +45,7 @@ class module_FrIf:
 /*****************************************************/
 module_FrIf    FrIf;
 infEcuMClient* gptrinfEcuMClient_FrIf = &FrIf;
+infDcmClient*  gptrinfDcmClient_FrIf  = &FrIf;
 infSchMClient* gptrinfSchMClient_FrIf = &FrIf;
 
 /*****************************************************/
@@ -53,6 +55,9 @@ FUNC(void, FRIF_CODE) module_FrIf::InitFunction(void){
 }
 
 FUNC(void, FRIF_CODE) module_FrIf::DeInitFunction(void){
+}
+
+FUNC(void, FRIF_CODE) module_FrIf::GetVersionInfo(void){
 }
 
 FUNC(void, FRIF_CODE) module_FrIf::MainFunction(void){

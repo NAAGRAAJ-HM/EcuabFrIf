@@ -8,8 +8,8 @@
 /*****************************************************/
 #include "module.h"
 #include "infFrIf_EcuM.h"
+#include "infFrIf_Dcm.h"
 #include "infFrIf_SchM.h"
-#include "FrIf_Unused.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -63,8 +63,7 @@ FUNC(void, FRIF_CODE) module_FrIf::GetVersionInfo(void){
 FUNC(void, FRIF_CODE) module_FrIf::MainFunction(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::GetVersionInfo(void){
-}
+#include "FrIf_Unused.h"
 
 FUNC(void, FRIF_CODE) class_FrIf_Unused::ControllerInit(void){
 }

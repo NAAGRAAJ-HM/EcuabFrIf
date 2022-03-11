@@ -1,6 +1,6 @@
 #pragma once
 /*****************************************************/
-/* File   : FrIf_EcuM.h                              */
+/* File   : infFrIf_SchM.h                           */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
@@ -32,7 +32,7 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern infEcuMClient* gptrinfEcuMClient_FrIf;
+extern infSchMClient* gptrinfSchMClient_FrIf;
 
 /*****************************************************/
 /* FUNCTIONS                                         */

@@ -6,9 +6,8 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "infFrIf_Version.h"
-
 #include "module.h"
+#include "infFrIf_Version.h"
 #include "infFrIf_EcuM.h"
 #include "infFrIf_Dcm.h"
 #include "infFrIf_SchM.h"
@@ -45,31 +44,20 @@ class module_FrIf:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-
-/******************************************************************************/
-/* FUNCTIONS                                                                  */
-/******************************************************************************/
-
-/******************************************************************************/
-/* EOF                                                                        */
-/******************************************************************************/
-
-
-/*****************************************************/
-/* OBJECTS                                           */
-/*****************************************************/
 VAR(module_FrIf, FRIF_VAR) FrIf;
 CONSTP2VAR(infEcuMClient, FRIF_VAR, FRIF_CONST) gptrinfEcuMClient_FrIf = &FrIf;
 CONSTP2VAR(infDcmClient,  FRIF_VAR, FRIF_CONST) gptrinfDcmClient_FrIf  = &FrIf;
 CONSTP2VAR(infSchMClient, FRIF_VAR, FRIF_CONST) gptrinfSchMClient_FrIf = &FrIf;
 
-/*****************************************************/
-/* FUNCTIONS                                         */
-/*****************************************************/
+/******************************************************************************/
+/* FUNCTIONS                                                                  */
+/******************************************************************************/
 FUNC(void, FRIF_CODE) module_FrIf::InitFunction(void){
+   FrIf.IsInitDone = E_OK;
 }
 
 FUNC(void, FRIF_CODE) module_FrIf::DeInitFunction(void){
+   FrIf.IsInitDone = E_NOT_OK;
 }
 
 FUNC(void, FRIF_CODE) module_FrIf::GetVersionInfo(void){
@@ -203,7 +191,7 @@ FUNC(void, FRIF_CODE) class_FrIf_Unused::JobListExec(void){
 FUNC(void, FRIF_CODE) class_FrIf_Unused::CbWakeupByTransceiver(void){
 }
 
-/*****************************************************/
-/* EOF                                               */
-/*****************************************************/
+/******************************************************************************/
+/* EOF                                                                        */
+/******************************************************************************/
 

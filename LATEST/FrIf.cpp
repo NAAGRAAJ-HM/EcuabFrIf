@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "infFrIf_Version.h"
+#include "FrIf_Cfg.h"
 #include "infFrIf_EcuM.h"
 #include "infFrIf_Dcm.h"
 #include "infFrIf_SchM.h"
@@ -15,10 +15,19 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
+#define FRIF_AR_RELEASE_MAJOR_VERSION                                          4
+#define FRIF_AR_RELEASE_MINOR_VERSION                                          3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
+#if(FRIF_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
+   #error "Incompatible FRIF_AR_RELEASE_MAJOR_VERSION!"
+#endif
+
+#if(FRIF_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
+   #error "Incompatible FRIF_AR_RELEASE_MINOR_VERSION!"
+#endif
 
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
@@ -61,6 +70,11 @@ FUNC(void, FRIF_CODE) module_FrIf::DeInitFunction(void){
 }
 
 FUNC(void, FRIF_CODE) module_FrIf::GetVersionInfo(void){
+#if(STD_ON == FrIf_DevErrorDetect)
+//TBD: API parameter check
+   Det_ReportError(
+   );
+#endif
 }
 
 FUNC(void, FRIF_CODE) module_FrIf::MainFunction(void){

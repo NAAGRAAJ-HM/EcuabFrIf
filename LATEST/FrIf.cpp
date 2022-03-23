@@ -40,6 +40,16 @@ class module_FrIf:
       FUNC(void, FRIF_CODE) DeInitFunction (void);
       FUNC(void, FRIF_CODE) GetVersionInfo (void);
       FUNC(void, FRIF_CODE) MainFunction   (void);
+
+   private:
+      CONST(Std_TypeVersionInfo, FRIF_CONST) VersionInfo = {
+            0x0000
+         ,  0xFFFF
+         ,  0x01
+         ,  '0'
+         ,  '1'
+         ,  '0'
+      };
 };
 
 /******************************************************************************/

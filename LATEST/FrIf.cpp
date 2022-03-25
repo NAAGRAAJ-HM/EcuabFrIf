@@ -6,11 +6,11 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "module.h"
-#include "CfgFrIf.h"
-#include "infFrIf_EcuM.h"
-#include "infFrIf_Dcm.h"
-#include "infFrIf_SchM.h"
+#include "module.hpp"
+#include "CfgFrIf.hpp"
+#include "infFrIf_EcuM.hpp"
+#include "infFrIf_Dcm.hpp"
+#include "infFrIf_SchM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -90,7 +90,7 @@ FUNC(void, FRIF_CODE) module_FrIf::GetVersionInfo(void){
 FUNC(void, FRIF_CODE) module_FrIf::MainFunction(void){
 }
 
-#include "FrIf_Unused.h"
+#include "FrIf_Unused.hpp"
 
 FUNC(void, FRIF_CODE) class_FrIf_Unused::ControllerInit(void){
 }

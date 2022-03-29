@@ -7,7 +7,6 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.hpp"
-#include "CfgFrIf.hpp"
 #include "infFrIf_EcuM.hpp"
 #include "infFrIf_Dcm.hpp"
 #include "infFrIf_SchM.hpp"
@@ -36,37 +35,40 @@ class module_FrIf:
       public abstract_module
 {
    public:
+      module_FrIf(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
+      }
       FUNC(void, FRIF_CODE) InitFunction   (void);
       FUNC(void, FRIF_CODE) DeInitFunction (void);
-      FUNC(void, FRIF_CODE) GetVersionInfo (void);
       FUNC(void, FRIF_CODE) MainFunction   (void);
-
-   private:
-      CONST(Std_TypeVersionInfo, FRIF_CONST) VersionInfo = {
-            0x0000
-         ,  0xFFFF
-         ,  0x01
-         ,  '0'
-         ,  '1'
-         ,  '0'
-      };
 };
+
+extern VAR(module_FrIf, FRIF_VAR) FrIf;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
 /******************************************************************************/
+CONSTP2VAR(infEcuMClient, FRIF_VAR, FRIF_CONST) gptrinfEcuMClient_FrIf = &FrIf;
+CONSTP2VAR(infDcmClient,  FRIF_VAR, FRIF_CONST) gptrinfDcmClient_FrIf  = &FrIf;
+CONSTP2VAR(infSchMClient, FRIF_VAR, FRIF_CONST) gptrinfSchMClient_FrIf = &FrIf;
 
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
+#include "CfgFrIf.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_FrIf, FRIF_VAR) FrIf;
-CONSTP2VAR(infEcuMClient, FRIF_VAR, FRIF_CONST) gptrinfEcuMClient_FrIf = &FrIf;
-CONSTP2VAR(infDcmClient,  FRIF_VAR, FRIF_CONST) gptrinfDcmClient_FrIf  = &FrIf;
-CONSTP2VAR(infSchMClient, FRIF_VAR, FRIF_CONST) gptrinfSchMClient_FrIf = &FrIf;
+VAR(module_FrIf, FRIF_VAR) FrIf(
+   {
+         0x0000
+      ,  0xFFFF
+      ,  0x01
+      ,  '0'
+      ,  '1'
+      ,  '0'
+   }
+);
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
@@ -79,20 +81,11 @@ FUNC(void, FRIF_CODE) module_FrIf::DeInitFunction(void){
    FrIf.IsInitDone = E_NOT_OK;
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::GetVersionInfo(void){
-#if(STD_ON == FrIf_DevErrorDetect)
-//TBD: API parameter check
-   Det_ReportError(
-   );
-#endif
-}
-
 FUNC(void, FRIF_CODE) module_FrIf::MainFunction(void){
 }
 
 class class_FrIf_Unused{
    public:
-      FUNC(void, FRIF_CODE) GetVersionInfo            (void);
       FUNC(void, FRIF_CODE) ControllerInit            (void);
       FUNC(void, FRIF_CODE) StartCommunication        (void);
       FUNC(void, FRIF_CODE) HaltCommunication         (void);

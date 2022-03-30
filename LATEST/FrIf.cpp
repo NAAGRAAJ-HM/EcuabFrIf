@@ -6,7 +6,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "module.hpp"
+#include "Module.hpp"
 #include "infFrIf_EcuM.hpp"
 #include "infFrIf_Dcm.hpp"
 #include "infFrIf_SchM.hpp"
@@ -37,6 +37,9 @@ class module_FrIf:
    public:
       module_FrIf(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
       }
+      FUNC(void, _CODE) InitFunction(
+         CONSTP2CONST(CfgModule_TypeAbstract, _CONFIG_DATA, _APPL_CONST) lptrCfgModule
+      );
       FUNC(void, FRIF_CODE) InitFunction   (void);
       FUNC(void, FRIF_CODE) DeInitFunction (void);
       FUNC(void, FRIF_CODE) MainFunction   (void);
@@ -73,7 +76,19 @@ VAR(module_FrIf, FRIF_VAR) FrIf(
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, FRIF_CODE) module_FrIf::InitFunction(void){
+FUNC(void, FRIF_CODE) module_FrIf::InitFunction(
+   CONSTP2CONST(CfgFrIf_Type, CFGFRIF_CONFIG_DATA, CFGFRIF_APPL_CONST) lptrCfgFrIf
+){
+   if(NULL_PTR == lptrCfgFrIf){
+#if(STD_ON == FrIf_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+// check lptrCfgFrIf for memory faults
+// use PBcfg_FrIf as back-up configuration
+   }
    FrIf.IsInitDone = E_OK;
 }
 

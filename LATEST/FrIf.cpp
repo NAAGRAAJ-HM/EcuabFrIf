@@ -78,6 +78,7 @@ VAR(module_FrIf, FRIF_VAR) FrIf(
 FUNC(void, FRIF_CODE) module_FrIf::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, FRIF_CONFIG_DATA, FRIF_APPL_CONST) lptrCfgModule
 ){
+#if(STD_ON == FrIf_InitCheck)
    if(E_OK == IsInitDone){
 #if(STD_ON == FrIf_DevErrorDetect)
       Det_ReportError(
@@ -85,6 +86,7 @@ FUNC(void, FRIF_CODE) module_FrIf::InitFunction(
 #endif
    }
    else{
+#endif
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == FrIf_DevErrorDetect)
          Det_ReportError(
@@ -96,10 +98,13 @@ FUNC(void, FRIF_CODE) module_FrIf::InitFunction(
 // use PBcfg_FrIf as back-up configuration
       }
       IsInitDone = E_OK;
+#if(STD_ON == FrIf_InitCheck)
    }
+#endif
 }
 
 FUNC(void, FRIF_CODE) module_FrIf::DeInitFunction(void){
+#if(STD_ON == FrIf_InitCheck)
    if(E_OK != IsInitDone){
 #if(STD_ON == FrIf_DevErrorDetect)
       Det_ReportError(
@@ -107,11 +112,26 @@ FUNC(void, FRIF_CODE) module_FrIf::DeInitFunction(void){
 #endif
    }
    else{
+#endif
       IsInitDone = E_NOT_OK;
+#if(STD_ON == FrIf_InitCheck)
    }
+#endif
 }
 
 FUNC(void, FRIF_CODE) module_FrIf::MainFunction(void){
+#if(STD_ON == FrIf_InitCheck)
+   if(E_OK != IsInitDone){
+#if(STD_ON == FrIf_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+#endif
+#if(STD_ON == FrIf_InitCheck)
+   }
+#endif
 }
 
 class class_FrIf_Unused{

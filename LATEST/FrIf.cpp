@@ -31,8 +31,54 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
+class class_FrIf_Functionality{
+   public:
+      FUNC(void, FRIF_CODE) ControllerInit            (void);
+      FUNC(void, FRIF_CODE) StartCommunication        (void);
+      FUNC(void, FRIF_CODE) HaltCommunication         (void);
+      FUNC(void, FRIF_CODE) AbortCommunication        (void);
+      FUNC(void, FRIF_CODE) GetState                  (void);
+      FUNC(void, FRIF_CODE) SetState                  (void);
+      FUNC(void, FRIF_CODE) SetWakeupChannel          (void);
+      FUNC(void, FRIF_CODE) SendWUP                   (void);
+      FUNC(void, FRIF_CODE) GetSyncState              (void);
+      FUNC(void, FRIF_CODE) SetExtSync                (void);
+      FUNC(void, FRIF_CODE) GetPOCStatus              (void);
+      FUNC(void, FRIF_CODE) GetGlobalTime             (void);
+      FUNC(void, FRIF_CODE) AllowColdStart            (void);
+      FUNC(void, FRIF_CODE) GetMacroticksDuration     (void);
+      FUNC(void, FRIF_CODE) Transmit                  (void);
+      FUNC(void, FRIF_CODE) SetTransceiverMode        (void);
+      FUNC(void, FRIF_CODE) GetTransceiverMode        (void);
+      FUNC(void, FRIF_CODE) GetTransceiverWUReason    (void);
+      FUNC(void, FRIF_CODE) EnableTransceiverWakeup   (void);
+      FUNC(void, FRIF_CODE) DisableTransceiverWakeup  (void);
+      FUNC(void, FRIF_CODE) ClearTransceiverWakeup    (void);
+      FUNC(void, FRIF_CODE) GetCycleLength            (void);
+      FUNC(void, FRIF_CODE) SetAbsoluteTimer          (void);
+      FUNC(void, FRIF_CODE) SetRelativeTimer          (void);
+      FUNC(void, FRIF_CODE) CancelAbsoluteTimer       (void);
+      FUNC(void, FRIF_CODE) CancelRelativeTimer       (void);
+      FUNC(void, FRIF_CODE) EnableAbsoluteTimerIRQ    (void);
+      FUNC(void, FRIF_CODE) EnableRelativeTimerIRQ    (void);
+      FUNC(void, FRIF_CODE) GetAbsoluteTimerIRQStatus (void);
+      FUNC(void, FRIF_CODE) GetRelativeTimerIRQStatus (void);
+      FUNC(void, FRIF_CODE) AckAbsoluteTimerIRQ       (void);
+      FUNC(void, FRIF_CODE) AckRelativeTimerIRQ       (void);
+      FUNC(void, FRIF_CODE) DisableAbsoluteTimerIRQ   (void);
+      FUNC(void, FRIF_CODE) DisableRelativeTimerIRQ   (void);
+      FUNC(void, FRIF_CODE) GetNmVector               (void);
+      FUNC(void, FRIF_CODE) GetClockCorrection        (void);
+      FUNC(void, FRIF_CODE) GetChannelStatus          (void);
+      FUNC(void, FRIF_CODE) ReadCCConfig              (void);
+      FUNC(void, FRIF_CODE) GetWakeupRxStatus         (void);
+      FUNC(void, FRIF_CODE) JobListExec               (void);
+      FUNC(void, FRIF_CODE) CbWakeupByTransceiver     (void);
+};
+
 class module_FrIf:
       public abstract_module
+   ,  public class_FrIf_Functionality
 {
    public:
       module_FrIf(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
@@ -84,6 +130,10 @@ FUNC(void, FRIF_CODE) module_FrIf::InitFunction(
    if(E_OK == IsInitDone){
 #if(STD_ON == FrIf_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -92,6 +142,10 @@ FUNC(void, FRIF_CODE) module_FrIf::InitFunction(
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == FrIf_DevErrorDetect)
          Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
          );
 #endif
       }
@@ -116,6 +170,10 @@ FUNC(void, FRIF_CODE) module_FrIf::DeInitFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == FrIf_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -132,6 +190,10 @@ FUNC(void, FRIF_CODE) module_FrIf::MainFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == FrIf_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -142,172 +204,127 @@ FUNC(void, FRIF_CODE) module_FrIf::MainFunction(void){
 #endif
 }
 
-class class_FrIf_Unused{
-   public:
-      FUNC(void, FRIF_CODE) ControllerInit            (void);
-      FUNC(void, FRIF_CODE) StartCommunication        (void);
-      FUNC(void, FRIF_CODE) HaltCommunication         (void);
-      FUNC(void, FRIF_CODE) AbortCommunication        (void);
-      FUNC(void, FRIF_CODE) GetState                  (void);
-      FUNC(void, FRIF_CODE) SetState                  (void);
-      FUNC(void, FRIF_CODE) SetWakeupChannel          (void);
-      FUNC(void, FRIF_CODE) SendWUP                   (void);
-      FUNC(void, FRIF_CODE) GetSyncState              (void);
-      FUNC(void, FRIF_CODE) SetExtSync                (void);
-      FUNC(void, FRIF_CODE) GetPOCStatus              (void);
-      FUNC(void, FRIF_CODE) GetGlobalTime             (void);
-      FUNC(void, FRIF_CODE) AllowColdStart            (void);
-      FUNC(void, FRIF_CODE) GetMacroticksDuration     (void);
-      FUNC(void, FRIF_CODE) Transmit                  (void);
-      FUNC(void, FRIF_CODE) SetTransceiverMode        (void);
-      FUNC(void, FRIF_CODE) GetTransceiverMode        (void);
-      FUNC(void, FRIF_CODE) GetTransceiverWUReason    (void);
-      FUNC(void, FRIF_CODE) EnableTransceiverWakeup   (void);
-      FUNC(void, FRIF_CODE) DisableTransceiverWakeup  (void);
-      FUNC(void, FRIF_CODE) ClearTransceiverWakeup    (void);
-      FUNC(void, FRIF_CODE) GetCycleLength            (void);
-      FUNC(void, FRIF_CODE) SetAbsoluteTimer          (void);
-      FUNC(void, FRIF_CODE) SetRelativeTimer          (void);
-      FUNC(void, FRIF_CODE) CancelAbsoluteTimer       (void);
-      FUNC(void, FRIF_CODE) CancelRelativeTimer       (void);
-      FUNC(void, FRIF_CODE) EnableAbsoluteTimerIRQ    (void);
-      FUNC(void, FRIF_CODE) EnableRelativeTimerIRQ    (void);
-      FUNC(void, FRIF_CODE) GetAbsoluteTimerIRQStatus (void);
-      FUNC(void, FRIF_CODE) GetRelativeTimerIRQStatus (void);
-      FUNC(void, FRIF_CODE) AckAbsoluteTimerIRQ       (void);
-      FUNC(void, FRIF_CODE) AckRelativeTimerIRQ       (void);
-      FUNC(void, FRIF_CODE) DisableAbsoluteTimerIRQ   (void);
-      FUNC(void, FRIF_CODE) DisableRelativeTimerIRQ   (void);
-      FUNC(void, FRIF_CODE) GetNmVector               (void);
-      FUNC(void, FRIF_CODE) GetClockCorrection        (void);
-      FUNC(void, FRIF_CODE) GetChannelStatus          (void);
-      FUNC(void, FRIF_CODE) ReadCCConfig              (void);
-      FUNC(void, FRIF_CODE) GetWakeupRxStatus         (void);
-      FUNC(void, FRIF_CODE) JobListExec               (void);
-      FUNC(void, FRIF_CODE) CbWakeupByTransceiver     (void);
-};
-
-FUNC(void, FRIF_CODE) class_FrIf_Unused::ControllerInit(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::ControllerInit(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::StartCommunication(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::StartCommunication(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::HaltCommunication(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::HaltCommunication(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::AbortCommunication(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::AbortCommunication(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::GetState(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::GetState(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::SetState(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::SetState(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::SetWakeupChannel(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::SetWakeupChannel(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::SendWUP(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::SendWUP(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::GetSyncState(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::GetSyncState(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::SetExtSync(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::SetExtSync(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::GetPOCStatus(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::GetPOCStatus(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::GetGlobalTime(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::GetGlobalTime(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::AllowColdStart(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::AllowColdStart(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::GetMacroticksDuration(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::GetMacroticksDuration(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::Transmit(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::Transmit(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::SetTransceiverMode(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::SetTransceiverMode(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::GetTransceiverMode(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::GetTransceiverMode(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::GetTransceiverWUReason(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::GetTransceiverWUReason(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::EnableTransceiverWakeup(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::EnableTransceiverWakeup(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::DisableTransceiverWakeup(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::DisableTransceiverWakeup(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::ClearTransceiverWakeup(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::ClearTransceiverWakeup(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::GetCycleLength(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::GetCycleLength(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::SetAbsoluteTimer(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::SetAbsoluteTimer(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::SetRelativeTimer(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::SetRelativeTimer(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::CancelAbsoluteTimer(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::CancelAbsoluteTimer(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::CancelRelativeTimer(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::CancelRelativeTimer(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::EnableAbsoluteTimerIRQ(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::EnableAbsoluteTimerIRQ(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::EnableRelativeTimerIRQ(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::EnableRelativeTimerIRQ(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::GetAbsoluteTimerIRQStatus(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::GetAbsoluteTimerIRQStatus(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::GetRelativeTimerIRQStatus(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::GetRelativeTimerIRQStatus(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::AckAbsoluteTimerIRQ(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::AckAbsoluteTimerIRQ(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::AckRelativeTimerIRQ(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::AckRelativeTimerIRQ(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::DisableAbsoluteTimerIRQ(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::DisableAbsoluteTimerIRQ(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::DisableRelativeTimerIRQ(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::DisableRelativeTimerIRQ(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::GetNmVector(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::GetNmVector(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::GetClockCorrection(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::GetClockCorrection(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::GetChannelStatus(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::GetChannelStatus(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::ReadCCConfig(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::ReadCCConfig(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::GetWakeupRxStatus(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::GetWakeupRxStatus(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::JobListExec(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::JobListExec(void){
 }
 
-FUNC(void, FRIF_CODE) class_FrIf_Unused::CbWakeupByTransceiver(void){
+FUNC(void, FRIF_CODE) class_FrIf_Functionality::CbWakeupByTransceiver(void){
 }
 
 /******************************************************************************/

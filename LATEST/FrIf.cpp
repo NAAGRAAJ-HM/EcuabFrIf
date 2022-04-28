@@ -7,6 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "FrIf_core.hpp"
 #include "infFrIf_EcuM.hpp"
 #include "infFrIf_Dcm.hpp"
 #include "infFrIf_SchM.hpp"

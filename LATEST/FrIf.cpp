@@ -7,10 +7,9 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "CfgFrIf.hpp"
 #include "FrIf_core.hpp"
-#include "infFrIf_EcuM.hpp"
-#include "infFrIf_Dcm.hpp"
-#include "infFrIf_SchM.hpp"
+#include "infFrIf.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -44,6 +43,7 @@ class module_FrIf:
       );
       FUNC(void, FRIF_CODE) DeInitFunction (void);
       FUNC(void, FRIF_CODE) MainFunction   (void);
+      FRIF_CORE_FUNCTIONALITIES
 };
 
 extern VAR(module_FrIf, FRIF_VAR) FrIf;
@@ -58,7 +58,6 @@ CONSTP2VAR(infSchMClient, FRIF_VAR, FRIF_CONST) gptrinfSchMClient_FrIf = &FrIf;
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
-#include "CfgFrIf.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */

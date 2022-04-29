@@ -12,7 +12,7 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define FRIF_COREFUNCTIONALITIES                                               \
+#define FRIF_CORE_FUNCTIONALITIES                                              \
               FUNC(void, FRIF_CODE) ControllerInit            (void);          \
               FUNC(void, FRIF_CODE) StartCommunication        (void);          \
               FUNC(void, FRIF_CODE) HaltCommunication         (void);          \
@@ -55,7 +55,7 @@
               FUNC(void, FRIF_CODE) JobListExec               (void);          \
               FUNC(void, FRIF_CODE) CbWakeupByTransceiver     (void);          \
 
-#define FRIF_COREFUNCTIONALITIES_VIRTUAL                                       \
+#define FRIF_CORE_FUNCTIONALITIES_VIRTUAL                                      \
       virtual FUNC(void, FRIF_CODE) ControllerInit            (void) = 0;      \
       virtual FUNC(void, FRIF_CODE) StartCommunication        (void) = 0;      \
       virtual FUNC(void, FRIF_CODE) HaltCommunication         (void) = 0;      \
@@ -107,7 +107,7 @@
 /******************************************************************************/
 class class_FrIf_Functionality{
    public:
-      FRIF_COREFUNCTIONALITIES_VIRTUAL
+      FRIF_CORE_FUNCTIONALITIES_VIRTUAL
 };
 
 /******************************************************************************/

@@ -113,7 +113,7 @@ FUNC(void, FRIF_CODE) module_FrIf::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  FRIF_E_UNINIT
       );
 #endif
    }
@@ -133,7 +133,7 @@ FUNC(void, FRIF_CODE) module_FrIf::DeInitFunction(void){
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  FRIF_E_UNINIT
       );
 #endif
    }
@@ -152,7 +152,7 @@ FUNC(void, FRIF_CODE) module_FrIf::MainFunction(void){
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  FRIF_E_UNINIT
       );
 #endif
    }

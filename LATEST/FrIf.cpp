@@ -9,7 +9,7 @@
 #include "Module.hpp"
 #include "CfgFrIf.hpp"
 #include "FrIf_core.hpp"
-#include "infFrIf.hpp"
+#include "infFrIf_Exp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -32,6 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_FrIf:
+   INTERFACES_EXPORTED_FRIF
       public abstract_module
    ,  public class_FrIf_Functionality
 {

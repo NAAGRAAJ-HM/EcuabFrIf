@@ -32,7 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_FrIf:
-   INTERFACES_EXPORTED_FRIF
+      INTERFACES_EXPORTED_FRIF
       public abstract_module
    ,  public class_FrIf_Functionality
 {

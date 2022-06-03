@@ -10,6 +10,7 @@
 #include "CfgFrIf.hpp"
 #include "FrIf_core.hpp"
 #include "infFrIf_Exp.hpp"
+#include "infFrIf_Imp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -42,6 +43,7 @@ class module_FrIf:
 /******************************************************************************/
             Std_TypeReturn          IsInitDone{E_NOT_OK};
       const CfgModule_TypeAbstract* lptrCfg{(CfgModule_TypeAbstract*)NULL_PTR};
+            infPduRClient_Lo        infPduRClient_FrIf;
 
    public:
       module_FrIf(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){

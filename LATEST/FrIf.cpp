@@ -75,7 +75,7 @@ CONSTP2VAR(infSchMClient, FRIF_VAR, FRIF_CONST) gptrinfSchMClient_FrIf = &FrIf;
 VAR(module_FrIf, FRIF_VAR) FrIf(
    {
 #if(STD_ON == _ReSIM)
-// char strModuleName[6];
+   char strModuleName[6] = "FRIF";
 #else
 #endif
          FRIF_AR_RELEASE_VERSION_MAJOR

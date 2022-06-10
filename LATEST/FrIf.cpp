@@ -74,10 +74,6 @@ CONSTP2VAR(infSchMClient, FRIF_VAR, FRIF_CONST) gptrinfSchMClient_FrIf = &FrIf;
 /******************************************************************************/
 VAR(module_FrIf, FRIF_VAR) FrIf(
    {
-#if(STD_ON == _ReSIM)
-         "FrIf",
-#else
-#endif
          FRIF_AR_RELEASE_VERSION_MAJOR
       ,  FRIF_AR_RELEASE_VERSION_MINOR
       ,  0x00

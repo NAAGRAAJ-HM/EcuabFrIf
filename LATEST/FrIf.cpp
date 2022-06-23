@@ -131,7 +131,9 @@ FUNC(void, FRIF_CODE) module_FrIf::InitFunction(
 #endif
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::DeInitFunction(void){
+FUNC(void, FRIF_CODE) module_FrIf::DeInitFunction(
+   void
+){
 #if(STD_ON == FrIf_InitCheck)
    if(
          E_OK
@@ -154,7 +156,9 @@ FUNC(void, FRIF_CODE) module_FrIf::DeInitFunction(void){
 #endif
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::MainFunction(void){
+FUNC(void, FRIF_CODE) module_FrIf::MainFunction(
+   void
+){
 #if(STD_ON == FrIf_InitCheck)
    if(
          E_OK
@@ -176,127 +180,209 @@ FUNC(void, FRIF_CODE) module_FrIf::MainFunction(void){
 #endif
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::ControllerInit(void){
+FUNC(void, FRIF_CODE) module_FrIf::ControllerInit(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::StartCommunication(void){
+FUNC(void, FRIF_CODE) module_FrIf::StartCommunication(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::HaltCommunication(void){
+FUNC(void, FRIF_CODE) module_FrIf::HaltCommunication(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::AbortCommunication(void){
+FUNC(void, FRIF_CODE) module_FrIf::AbortCommunication(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::GetState(void){
+FUNC(void, FRIF_CODE) module_FrIf::GetState(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::SetState(void){
+FUNC(void, FRIF_CODE) module_FrIf::SetState(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::SetWakeupChannel(void){
+FUNC(void, FRIF_CODE) module_FrIf::SetWakeupChannel(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::SendWUP(void){
+FUNC(void, FRIF_CODE) module_FrIf::SendWUP(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::GetSyncState(void){
+FUNC(void, FRIF_CODE) module_FrIf::GetSyncState(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::SetExtSync(void){
+FUNC(void, FRIF_CODE) module_FrIf::SetExtSync(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::GetPOCStatus(void){
+FUNC(void, FRIF_CODE) module_FrIf::GetPOCStatus(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::GetGlobalTime(void){
+FUNC(void, FRIF_CODE) module_FrIf::GetGlobalTime(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::AllowColdStart(void){
+FUNC(void, FRIF_CODE) module_FrIf::AllowColdStart(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::GetMacroticksDuration(void){
+FUNC(void, FRIF_CODE) module_FrIf::GetMacroticksDuration(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::Transmit(void){
+FUNC(void, FRIF_CODE) module_FrIf::Transmit(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::SetTransceiverMode(void){
+FUNC(void, FRIF_CODE) module_FrIf::SetTransceiverMode(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::GetTransceiverMode(void){
+FUNC(void, FRIF_CODE) module_FrIf::GetTransceiverMode(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::GetTransceiverWUReason(void){
+FUNC(void, FRIF_CODE) module_FrIf::GetTransceiverWUReason(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::EnableTransceiverWakeup(void){
+FUNC(void, FRIF_CODE) module_FrIf::EnableTransceiverWakeup(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::DisableTransceiverWakeup(void){
+FUNC(void, FRIF_CODE) module_FrIf::DisableTransceiverWakeup(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::ClearTransceiverWakeup(void){
+FUNC(void, FRIF_CODE) module_FrIf::ClearTransceiverWakeup(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::GetCycleLength(void){
+FUNC(void, FRIF_CODE) module_FrIf::GetCycleLength(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::SetAbsoluteTimer(void){
+FUNC(void, FRIF_CODE) module_FrIf::SetAbsoluteTimer(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::SetRelativeTimer(void){
+FUNC(void, FRIF_CODE) module_FrIf::SetRelativeTimer(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::CancelAbsoluteTimer(void){
+FUNC(void, FRIF_CODE) module_FrIf::CancelAbsoluteTimer(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::CancelRelativeTimer(void){
+FUNC(void, FRIF_CODE) module_FrIf::CancelRelativeTimer(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::EnableAbsoluteTimerIRQ(void){
+FUNC(void, FRIF_CODE) module_FrIf::EnableAbsoluteTimerIRQ(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::EnableRelativeTimerIRQ(void){
+FUNC(void, FRIF_CODE) module_FrIf::EnableRelativeTimerIRQ(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::GetAbsoluteTimerIRQStatus(void){
+FUNC(void, FRIF_CODE) module_FrIf::GetAbsoluteTimerIRQStatus(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::GetRelativeTimerIRQStatus(void){
+FUNC(void, FRIF_CODE) module_FrIf::GetRelativeTimerIRQStatus(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::AckAbsoluteTimerIRQ(void){
+FUNC(void, FRIF_CODE) module_FrIf::AckAbsoluteTimerIRQ(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::AckRelativeTimerIRQ(void){
+FUNC(void, FRIF_CODE) module_FrIf::AckRelativeTimerIRQ(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::DisableAbsoluteTimerIRQ(void){
+FUNC(void, FRIF_CODE) module_FrIf::DisableAbsoluteTimerIRQ(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::DisableRelativeTimerIRQ(void){
+FUNC(void, FRIF_CODE) module_FrIf::DisableRelativeTimerIRQ(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::GetNmVector(void){
+FUNC(void, FRIF_CODE) module_FrIf::GetNmVector(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::GetClockCorrection(void){
+FUNC(void, FRIF_CODE) module_FrIf::GetClockCorrection(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::GetChannelStatus(void){
+FUNC(void, FRIF_CODE) module_FrIf::GetChannelStatus(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::ReadCCConfig(void){
+FUNC(void, FRIF_CODE) module_FrIf::ReadCCConfig(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::GetWakeupRxStatus(void){
+FUNC(void, FRIF_CODE) module_FrIf::GetWakeupRxStatus(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::JobListExec(void){
+FUNC(void, FRIF_CODE) module_FrIf::JobListExec(
+   void
+){
 }
 
-FUNC(void, FRIF_CODE) module_FrIf::CbWakeupByTransceiver(void){
+FUNC(void, FRIF_CODE) module_FrIf::CbWakeupByTransceiver(
+   void
+){
 }
 
 /******************************************************************************/

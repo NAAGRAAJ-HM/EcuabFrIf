@@ -83,12 +83,7 @@ FUNC(void, FRIF_CODE) module_FrIf::InitFunction(
    ){
 #endif
       if(NULL_PTR != lptrCfgModule){
-         if(STD_HIGH){
-            lptrCfg = lptrCfgModule;
-         }
-         else{
-            lptrCfg = &PBcfgFrIf;
-         }
+         lptrCfg = lptrCfgModule;
       }
       else{
 #if(STD_ON == FrIf_DevErrorDetect)

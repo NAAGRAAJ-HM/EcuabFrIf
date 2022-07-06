@@ -7,9 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
-#include "CfgFrIf.hpp"
-#include "FrIf_core.hpp"
-#include "infFrIf_Exp.hpp"
+#include "FrIf.hpp"
 #include "infFrIf_Imp.hpp"
 
 /******************************************************************************/
@@ -32,27 +30,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class module_FrIf:
-      INTERFACES_EXPORTED_FRIF
-      public abstract_module
-   ,  public class_FrIf_Functionality
-{
-   private:
-/******************************************************************************/
-/* OBJECTS                                                                    */
-/******************************************************************************/
-            infPduRClient_Lo        infPduRClient_FrIf;
-
-   public:
-      FUNC(void, FRIF_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, FRIF_CONFIG_DATA, FRIF_APPL_CONST) lptrCfgModule
-      );
-      FUNC(void, FRIF_CODE) DeInitFunction (void);
-      FUNC(void, FRIF_CODE) MainFunction   (void);
-      FRIF_CORE_FUNCTIONALITIES
-};
-
-extern VAR(module_FrIf, FRIF_VAR) FrIf;
 
 /******************************************************************************/
 /* CONSTS                                                                     */

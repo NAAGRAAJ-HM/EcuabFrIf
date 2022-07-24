@@ -48,7 +48,8 @@ VAR(module_FrIf, FRIF_VAR) FrIf;
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, FRIF_CODE) module_FrIf::InitFunction(
-   CONSTP2CONST(CfgModule_TypeAbstract, FRIF_CONFIG_DATA, FRIF_APPL_CONST) lptrCfgModule
+      CONSTP2CONST(ConstModule_TypeAbstract, FRIF_CONST,       FRIF_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   FRIF_CONFIG_DATA, FRIF_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == FrIf_InitCheck)
    if(
@@ -56,8 +57,12 @@ FUNC(void, FRIF_CODE) module_FrIf::InitFunction(
       != IsInitDone
    ){
 #endif
-      if(NULL_PTR != lptrCfgModule){
-         lptrCfg = lptrCfgModule;
+      if(
+            (NULL_PTR != lptrConstModule)
+         && (NULL_PTR != lptrCfgModule)
+      ){
+         lptrConst = lptrConstModule;
+         lptrCfg   = lptrCfgModule;
       }
       else{
 #if(STD_ON == FrIf_DevErrorDetect)

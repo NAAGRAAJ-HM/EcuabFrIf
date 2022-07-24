@@ -7,6 +7,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
+#include "ConstFrIf.hpp"
 #include "CfgFrIf.hpp"
 #include "FrIf_core.hpp"
 #include "infFrIf_Exp.hpp"
@@ -31,6 +32,7 @@ class module_FrIf:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
+      const ConstFrIf_Type* lptrConst = (ConstFrIf_Type*)NULL_PTR;
       infPduRClient_Lo infPduRClient_FrIf;
 
    public:
@@ -38,7 +40,8 @@ class module_FrIf:
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
       FUNC(void, FRIF_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, FRIF_CONFIG_DATA, FRIF_APPL_CONST) lptrCfgModule
+            CONSTP2CONST(ConstModule_TypeAbstract, FRIF_CONST,       FRIF_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   FRIF_CONFIG_DATA, FRIF_APPL_CONST) lptrCfgModule
       );
       FUNC(void, FRIF_CODE) DeInitFunction (void);
       FUNC(void, FRIF_CODE) MainFunction   (void);

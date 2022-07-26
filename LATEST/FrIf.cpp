@@ -61,7 +61,7 @@ FUNC(void, FRIF_CODE) module_FrIf::InitFunction(
             (NULL_PTR != lptrConstModule)
          && (NULL_PTR != lptrCfgModule)
       ){
-         lptrConst = lptrConstModule;
+         lptrConst = (const ConstFrIf_Type*)lptrConstModule;
          lptrCfg   = lptrCfgModule;
       }
       else{

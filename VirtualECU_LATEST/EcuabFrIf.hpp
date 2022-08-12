@@ -24,7 +24,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_EcuabFrIf:
-      INTERFACES_EXPORTED_FRIF
+      INTERFACES_EXPORTED_ECUABFRIF
       public abstract_module
    ,  public class_EcuabFrIf_Functionality
 {
@@ -39,13 +39,13 @@ class module_EcuabFrIf:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-      FUNC(void, FRIF_CODE) InitFunction(
-            CONSTP2CONST(ConstModule_TypeAbstract, FRIF_CONST,       FRIF_APPL_CONST) lptrConstModule
-         ,  CONSTP2CONST(CfgModule_TypeAbstract,   FRIF_CONFIG_DATA, FRIF_APPL_CONST) lptrCfgModule
+      FUNC(void, ECUABFRIF_CODE) InitFunction(
+            CONSTP2CONST(ConstModule_TypeAbstract, ECUABFRIF_CONST,       ECUABFRIF_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   ECUABFRIF_CONFIG_DATA, ECUABFRIF_APPL_CONST) lptrCfgModule
       );
-      FUNC(void, FRIF_CODE) DeInitFunction (void);
-      FUNC(void, FRIF_CODE) MainFunction   (void);
-      FRIF_CORE_FUNCTIONALITIES
+      FUNC(void, ECUABFRIF_CODE) DeInitFunction (void);
+      FUNC(void, ECUABFRIF_CODE) MainFunction   (void);
+      ECUABFRIF_CORE_FUNCTIONALITIES
 };
 
 /******************************************************************************/
@@ -59,7 +59,7 @@ class module_EcuabFrIf:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-extern VAR(module_EcuabFrIf, FRIF_VAR) EcuabFrIf;
+extern VAR(module_EcuabFrIf, ECUABFRIF_VAR) EcuabFrIf;
 
 /******************************************************************************/
 /* EOF                                                                        */

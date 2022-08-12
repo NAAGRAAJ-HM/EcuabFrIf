@@ -13,18 +13,18 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define FRIF_AR_RELEASE_VERSION_MAJOR                                          4
-#define FRIF_AR_RELEASE_VERSION_MINOR                                          3
+#define ECUABFRIF_AR_RELEASE_VERSION_MAJOR                                          4
+#define ECUABFRIF_AR_RELEASE_VERSION_MINOR                                          3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(FRIF_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
-   #error "Incompatible FRIF_AR_RELEASE_VERSION_MAJOR!"
+#if(ECUABFRIF_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
+   #error "Incompatible ECUABFRIF_AR_RELEASE_VERSION_MAJOR!"
 #endif
 
-#if(FRIF_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
-   #error "Incompatible FRIF_AR_RELEASE_VERSION_MINOR!"
+#if(ECUABFRIF_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
+   #error "Incompatible ECUABFRIF_AR_RELEASE_VERSION_MINOR!"
 #endif
 
 /******************************************************************************/
@@ -42,14 +42,14 @@
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_EcuabFrIf, FRIF_VAR) EcuabFrIf;
+VAR(module_EcuabFrIf, ECUABFRIF_VAR) EcuabFrIf;
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, FRIF_CODE) module_EcuabFrIf::InitFunction(
-      CONSTP2CONST(ConstModule_TypeAbstract, FRIF_CONST,       FRIF_APPL_CONST) lptrConstModule
-   ,  CONSTP2CONST(CfgModule_TypeAbstract,   FRIF_CONFIG_DATA, FRIF_APPL_CONST) lptrCfgModule
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::InitFunction(
+      CONSTP2CONST(ConstModule_TypeAbstract, ECUABFRIF_CONST,       ECUABFRIF_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   ECUABFRIF_CONFIG_DATA, ECUABFRIF_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == EcuabFrIf_InitCheck)
    if(
@@ -83,14 +83,14 @@ FUNC(void, FRIF_CODE) module_EcuabFrIf::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  FRIF_E_UNINIT
+         ,  ECUABFRIF_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::DeInitFunction(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::DeInitFunction(
    void
 ){
 #if(STD_ON == EcuabFrIf_InitCheck)
@@ -108,14 +108,14 @@ FUNC(void, FRIF_CODE) module_EcuabFrIf::DeInitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  FRIF_E_UNINIT
+         ,  ECUABFRIF_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::MainFunction(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::MainFunction(
    void
 ){
 #if(STD_ON == EcuabFrIf_InitCheck)
@@ -132,214 +132,214 @@ FUNC(void, FRIF_CODE) module_EcuabFrIf::MainFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  FRIF_E_UNINIT
+         ,  ECUABFRIF_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::ControllerInit(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::ControllerInit(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::StartServiceCommunication(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::StartServiceCommunication(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::HaltServiceCommunication(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::HaltServiceCommunication(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::AbortServiceCommunication(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::AbortServiceCommunication(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::GetState(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::GetState(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::SetState(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::SetState(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::SetWakeupChannel(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::SetWakeupChannel(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::SendWUP(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::SendWUP(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::GetSyncState(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::GetSyncState(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::SetExtSync(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::SetExtSync(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::GetPOCStatus(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::GetPOCStatus(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::GetGlobalTime(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::GetGlobalTime(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::AllowColdStart(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::AllowColdStart(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::GetMacroticksDuration(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::GetMacroticksDuration(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::Transmit(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::Transmit(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::SetTransceiverMode(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::SetTransceiverMode(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::GetTransceiverMode(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::GetTransceiverMode(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::GetTransceiverWUReason(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::GetTransceiverWUReason(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::EnableTransceiverWakeup(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::EnableTransceiverWakeup(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::DisableTransceiverWakeup(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::DisableTransceiverWakeup(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::ClearTransceiverWakeup(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::ClearTransceiverWakeup(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::GetCycleLength(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::GetCycleLength(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::SetAbsoluteTimer(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::SetAbsoluteTimer(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::SetRelativeTimer(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::SetRelativeTimer(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::McalCancelAbsoluteTimer(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::McalCancelAbsoluteTimer(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::McalCancelRelativeTimer(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::McalCancelRelativeTimer(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::EnableAbsoluteTimerIRQ(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::EnableAbsoluteTimerIRQ(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::EnableRelativeTimerIRQ(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::EnableRelativeTimerIRQ(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::GetAbsoluteTimerIRQStatus(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::GetAbsoluteTimerIRQStatus(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::GetRelativeTimerIRQStatus(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::GetRelativeTimerIRQStatus(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::AckAbsoluteTimerIRQ(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::AckAbsoluteTimerIRQ(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::AckRelativeTimerIRQ(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::AckRelativeTimerIRQ(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::DisableAbsoluteTimerIRQ(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::DisableAbsoluteTimerIRQ(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::DisableRelativeTimerIRQ(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::DisableRelativeTimerIRQ(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::GetServiceNmVector(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::GetServiceNmVector(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::GetClockCorrection(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::GetClockCorrection(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::GetChannelStatus(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::GetChannelStatus(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::ReadCCConfig(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::ReadCCConfig(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::GetWakeupRxStatus(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::GetWakeupRxStatus(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::JobListExec(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::JobListExec(
    void
 ){
 }
 
-FUNC(void, FRIF_CODE) module_EcuabFrIf::CbWakeupByTransceiver(
+FUNC(void, ECUABFRIF_CODE) module_EcuabFrIf::CbWakeupByTransceiver(
    void
 ){
 }

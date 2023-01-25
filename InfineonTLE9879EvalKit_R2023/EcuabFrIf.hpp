@@ -1,13 +1,13 @@
 #pragma once
 /******************************************************************************/
-/* File   : EcuabFrIf.hpp                                                          */
+/* File   : EcuabFrIf.hpp                                                     */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "ConstEcuabFrIf.hpp"
+#include "infEcuabFrIf_ServiceNvM_Types.hpp"
 #include "CfgEcuabFrIf.hpp"
 #include "EcuabFrIf_core.hpp"
 #include "infEcuabFrIf_Exp.hpp"

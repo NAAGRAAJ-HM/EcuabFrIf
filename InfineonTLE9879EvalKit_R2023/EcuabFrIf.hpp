@@ -32,7 +32,7 @@ class module_EcuabFrIf:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-      const ConstEcuabFrIf_Type* lptrConst = (ConstEcuabFrIf_Type*)NULL_PTR;
+      const ConstModule_TypeAbstract* lptrNvMBlocksRom = (ConstModule_TypeAbstract*)NULL_PTR;
       infServicePduRClient_Lo infServicePduRClient_EcuabFrIf;
 
    public:
@@ -40,7 +40,7 @@ class module_EcuabFrIf:
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
       FUNC(void, ECUABFRIF_CODE) InitFunction(
-            CONSTP2CONST(ConstModule_TypeAbstract, ECUABFRIF_CONST,       ECUABFRIF_APPL_CONST) lptrConstModule
+            CONSTP2CONST(ConstModule_TypeAbstract, ECUABFRIF_CONST,       ECUABFRIF_APPL_CONST) lptrNvMBlocksRomModule
          ,  CONSTP2CONST(CfgModule_TypeAbstract,   ECUABFRIF_CONFIG_DATA, ECUABFRIF_APPL_CONST) lptrCfgModule
       );
       FUNC(void, ECUABFRIF_CODE) DeInitFunction (void);
